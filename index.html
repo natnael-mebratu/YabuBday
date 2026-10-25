@@ -147,23 +147,16 @@
     font-family: "Caveat", cursive; font-size: 24px; line-height: 1.25;
   }
 
-  /* ---------- letter modal ---------- */
-  .modal {
-    position: fixed; inset: 0; z-index: 40; background: rgba(10,7,5,.82);
-    display: grid; place-items: center; padding: 16px;
-    opacity: 0; visibility: hidden; transition: opacity .5s, visibility .5s;
-  }
-  .modal.show { opacity: 1; visibility: visible; }
+  /* ---------- Momi's letter ---------- */
   .letter {
-    background: var(--paper); color: var(--ink); max-width: 560px; width: 100%;
-    max-height: 88vh; overflow-y: auto; border-radius: 6px; padding: 34px 26px 28px;
-    box-shadow: 0 30px 80px rgba(0,0,0,.6); transform: translateY(30px) scale(.97); transition: transform .6s ease;
+    background: var(--paper); color: var(--ink); border-radius: 6px; padding: 26px 22px 24px; margin: 14px 0 10px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.55);
     background-image: repeating-linear-gradient(transparent 0 35px, rgba(120,90,60,.12) 35px 36px);
   }
-  .modal.show .letter { transform: none; }
+  .letter-photo { margin: -50px auto 24px; max-width: 300px; transform: rotate(-2.5deg); }
+  .letter-photo img { max-height: 48vh; object-fit: cover; }
   .letter .am { font-family: "Noto Serif Ethiopic", serif; font-size: 18px; line-height: 2; }
   .letter .from { font-family: "Caveat", cursive; font-size: 30px; text-align: right; margin-top: 10px; }
-  .close { display: block; margin: 18px auto 0; background: var(--ink); color: var(--paper); border: 0; border-radius: 999px; padding: 10px 22px; font: inherit; font-size: 16px; cursor: pointer; }
 
   /* ---------- classified ---------- */
   .classified {
@@ -338,11 +331,19 @@
   <section class="chapter" id="c7">
     <p class="kicker reveal">chapter six</p>
     <h2 class="reveal">The reason Momi smiles.</h2>
-    <div class="photo reveal"><img class="tall" src="images/momi.jpg" alt="Yabu hugging Momi, holding flowers"></div>
     <p class="reveal">For years you slept beside her so she would never feel alone. You became her confidant. Her person.</p>
     <p class="reveal">I'm not exaggerating when I say <em>you're a big reason Momi is still alive and breathing.</em> And you're still the only one who can really make her smile.</p>
-    <p class="reveal">She wrote you something.</p>
-    <div class="reveal"><button class="btn" id="openLetter">💌 Open Momi's letter</button></div>
+    <p class="reveal">She wrote you something. 💌</p>
+    <div class="letter reveal">
+      <figure class="polaroid letter-photo"><img src="images/momi.jpg" alt="Yabu hugging Momi, holding flowers"><figcaption>Momi &amp; her Yabu</figcaption></figure>
+      <div class="am" lang="am">
+        <p>የኔ ፍቅር፡ ዛሬ 20 ዓመት ሲሞላህ ከአጠገቤ ባለመኖርህ ልቤ ቢናፍቅህም፡ በሩቅ ሆነህ በሰላም፣ በጤና እና በደስታ በመኖርህ ፈጣሪን አጅግ አድርጌ አመሰግናለሁ።</p>
+        <p>የመጀመሪያህን የልደት ቀን ከእኛ ርቀህ በካናዳ ብታከብርም፡ ፍቅሬ፡ ጸሎቴ እና ምኞቴ ሁልጊዜ ከጎንህ ናቸው። ከእናትህ ጉያ ወጥተህ ለራሰህ ህይወት ስትታገል ማየት ትልቅ ኩራት ነው የሚሰማኝ።</p>
+        <p>ፈጣሪ በሄድክበት መንገድ ሁሉ ብርሃኑን ያብራልህ፡ ህልምህን እና አላማህን ሁሉ እንዲሳካልህ ይርዳህ። ሁልጊዜ ደስተኛ፣ ጤናማ እና ስኬታማ ሁንልኝ።</p>
+        <p>በጣም እወድሃለሁ፡ ሁልጊዜ በጸሎቴ አስብሃለሁ!</p>
+      </div>
+      <div class="from">— Momi 💛</div>
+    </div>
     <button class="next reveal" data-next="c8">keep going ↓</button>
   </section>
 
@@ -350,6 +351,10 @@
   <section class="chapter quiet" id="c8">
     <p class="kicker reveal">chapter seven</p>
     <h2 class="reveal">You still pick up.</h2>
+    <figure class="polaroid reveal" style="margin:0 auto 30px; max-width: 360px; transform: rotate(-1.5deg)">
+      <img src="images/beach.jpg" alt="Yabu smiling on a beach in Canada">
+      <figcaption>you, in Canada ☀️</figcaption>
+    </figure>
     <p class="reveal">I know there are days you don't want to talk. Days where everything feels heavy and far away.</p>
     <p class="reveal">You pick up anyway. Every time we call to check on you, you answer.</p>
     <p class="reveal">That's how understanding you are. And it means more to us than you'll ever know. 📞💛</p>
@@ -431,20 +436,6 @@
   <p>26 October 2026</p>
 </footer>
 
-<!-- Momi's letter -->
-<div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-label="Momi's letter">
-  <div class="letter">
-    <div class="am" lang="am">
-      <p>የኔ ፍቅር፡ ዛሬ 20 ዓመት ሲሞላህ ከአጠገቤ ባለመኖርህ ልቤ ቢናፍቅህም፡ በሩቅ ሆነህ በሰላም፣ በጤና እና በደስታ በመኖርህ ፈጣሪን አጅግ አድርጌ አመሰግናለሁ።</p>
-      <p>የመጀመሪያህን የልደት ቀን ከእኛ ርቀህ በካናዳ ብታከብርም፡ ፍቅሬ፡ ጸሎቴ እና ምኞቴ ሁልጊዜ ከጎንህ ናቸው። ከእናትህ ጉያ ወጥተህ ለራሰህ ህይወት ስትታገል ማየት ትልቅ ኩራት ነው የሚሰማኝ።</p>
-      <p>ፈጣሪ በሄድክበት መንገድ ሁሉ ብርሃኑን ያብራልህ፡ ህልምህን እና አላማህን ሁሉ እንዲሳካልህ ይርዳህ። ሁልጊዜ ደስተኛ፣ ጤናማ እና ስኬታማ ሁንልኝ።</p>
-      <p>በጣም እወድሃለሁ፡ ሁልጊዜ በጸሎቴ አስብሃለሁ!</p>
-    </div>
-    <div class="from">— Momi 💛</div>
-    <button class="close" id="closeLetter">close</button>
-  </div>
-</div>
-
 <script>
 (() => {
   // ---------- confetti ----------
@@ -502,13 +493,6 @@
 
   // ---------- flip cards ----------
   document.querySelectorAll('.flip').forEach(f => f.addEventListener('click', () => f.classList.toggle('flipped')));
-
-  // ---------- Momi's letter ----------
-  const modal = document.getElementById('letterModal');
-  document.getElementById('openLetter').addEventListener('click', () => { modal.classList.add('show'); burst(60); });
-  document.getElementById('closeLetter').addEventListener('click', () => modal.classList.remove('show'));
-  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('show'); });
-  addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('show'); });
 
   // ---------- classified ----------
   document.getElementById('revealSecret').addEventListener('click', e => {
