@@ -199,6 +199,18 @@
   }
   .plate { width: min(380px, 98%); height: 12px; margin: 0 auto; border-radius: 50%; background: #e8dccb; }
   .counter { color: var(--muted); font-size: 16px; margin-top: 14px; }
+
+  /* ---------- advice list ---------- */
+  .advice { list-style: none; counter-reset: a; padding: 0; margin: 4px 0 26px; }
+  .advice li {
+    counter-increment: a; position: relative; padding: 14px 16px 14px 56px; margin-bottom: 12px;
+    background: rgba(233,182,92,.07); border: 1px solid rgba(233,182,92,.18); border-radius: 14px; font-size: .95em;
+  }
+  .advice li::before {
+    content: counter(a); position: absolute; left: 16px; top: 13px; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--gold); color: #2a1d10; font-weight: 600; font-size: 15px; display: grid; place-items: center;
+  }
+  .advice strong { color: var(--gold-soft); }
   #finale { display: none; margin-top: 34px; }
   #finale.show { display: block; animation: pop .9s ease; }
 
@@ -403,6 +415,26 @@
     <p class="reveal">One day we're going to be old, rich, successful and annoying. Our kids will be running around and making noise, and we'll be laughing about the year you turned 20 in Canada and thought it was the hardest thing in the world.</p>
     <p class="reveal">And you'll look back and see that it's where you got strong.</p>
     <p class="reveal big"><em>I'm sure of it. I'm sure of you.</em></p>
+    <button class="next reveal" data-next="c11b">keep going ↓</button>
+  </section>
+
+  <!-- 11b. Twenties -->
+  <section class="chapter" id="c11b">
+    <p class="kicker reveal">chapter ten</p>
+    <h2 class="reveal">Welcome to your twenties.</h2>
+    <p class="reveal big">Hang in there, Yabu. This decade is going to test you, and it's going to build you.</p>
+    <p class="reveal">Some advice from your big brother, for whatever it's worth:</p>
+    <ol class="advice reveal">
+      <li><strong>Keep your discipline.</strong> The way you keep your body, your room and your life in order is your superpower. Don't let one bad week take it from you.</li>
+      <li><strong>Bet on your brain.</strong> You learn faster than almost anyone I know. Pick something hard and go all the way with it.</li>
+      <li><strong>Call when it's heavy.</strong> You don't have to talk every day. But when it gets dark, call. Day or night, I'll pick up too.</li>
+      <li><strong>Choose your people.</strong> You can make friends anywhere. Keep the ones who make you better.</li>
+      <li><strong>Be patient with yourself.</strong> Twenty isn't late for anything. Your whole life is still in front of you.</li>
+      <li><strong>Keep praying</strong>, even on the days it feels like nobody's listening.</li>
+    </ol>
+    <p class="reveal">Because Yabu, never forget how far God has carried us.</p>
+    <p class="reveal">We lost Aba. There were days we didn't know how we'd make it. You left home, got pushed out of a house, and slept in a shelter. And every single time, <em>God got us back.</em> He gave Momi you. He gave you friends, a steady life, a future.</p>
+    <p class="reveal big">He hasn't dropped us once. <em>He's not going to start now.</em></p>
     <button class="next reveal" data-next="c12">one more ↓</button>
   </section>
 
