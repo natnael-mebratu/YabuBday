@@ -111,7 +111,8 @@
   .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 30px; align-items: start; }
   .pair .polaroid:nth-child(1) { transform: rotate(-3deg); }
   .pair .polaroid:nth-child(2) { transform: rotate(2.5deg); margin-top: 26px; }
-  .tall { max-height: 78vh; object-fit: cover; }
+  .photo.fit { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+  .photo .tall { width: auto; max-width: 100%; max-height: 82vh; }
 
   .next {
     align-self: center; margin-top: 18px; background: none; border: 1px solid rgba(233,182,92,.45);
@@ -154,7 +155,7 @@
     background-image: repeating-linear-gradient(transparent 0 35px, rgba(120,90,60,.12) 35px 36px);
   }
   .letter-photo { margin: -50px auto 24px; max-width: 300px; transform: rotate(-2.5deg); }
-  .letter-photo img { max-height: 48vh; object-fit: cover; }
+  .letter-photo img { max-height: 70vh; width: auto; margin: 0 auto; }
   .letter .am { font-family: "Noto Serif Ethiopic", serif; font-size: 18px; line-height: 2; }
   .letter .from { font-family: "Caveat", cursive; font-size: 30px; text-align: right; margin-top: 10px; }
 
@@ -271,7 +272,7 @@
   <section class="chapter" id="c2">
     <p class="kicker reveal">chapter one</p>
     <h2 class="reveal">Look at you now.</h2>
-    <div class="photo reveal"><img class="tall" src="images/suit.jpg" alt="Yabu standing tall in a black suit"></div>
+    <div class="photo fit reveal"><img class="tall" src="images/suit.jpg" alt="Yabu standing tall in a black suit"></div>
     <p class="reveal">Remember who you were a few years ago? I do. You decided you were going to change, and then you actually did it. Every day, even when nobody was watching.</p>
     <p class="reveal">That muscle isn't just muscle. It's <em>proof</em> that when you decide something, it happens. Never forget you're capable of that.</p>
     <button class="next reveal" data-next="c3">keep going ↓</button>
@@ -281,7 +282,7 @@
   <section class="chapter" id="c3">
     <p class="kicker reveal">chapter two</p>
     <h2 class="reveal">That brain of yours.</h2>
-    <div class="photo reveal"><img class="tall" src="images/graduation.jpg" alt="Yabu at graduation with Momi and Nati"></div>
+    <div class="photo fit reveal"><img class="tall" src="images/graduation.jpg" alt="Yabu at graduation with Momi and Nati"></div>
     <p class="reveal">You went from near the bottom of your class to the <em>top 15</em>. Do you understand how rare that is?</p>
     <p class="reveal">You can read something for 20 minutes and know it by heart. I've watched you do it, and I'm still not over it. You are so damn smart, Yabu.</p>
     <p class="reveal">So here's my one ask: <em>push yourself until you hit your limit.</em> I don't think you've found it yet. I don't think it's anywhere close.</p>
